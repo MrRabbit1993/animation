@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 帧动画</title>
+  <style>
+    /* 214_444_15帧_31张=2秒 */
+    @keyframes swiper {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: -6634px 0px; /*214*31*/
+      }
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    .demo {
+      width: 214px;
+      height: 444px;
+      background: url("./animation.png");
+      background-size: 6634px 444px;
+      animation: swiper 2s steps(31, start) 0ms infinite normal backwards;
+      /* keyframes动画的名称 */
+      /* animation-name: swiper;  */
+      /* 动画持续时间 2s */
+      /* animation-duration: 2s; */
+      /* 动画函数，分31步执行，每一帧显示帧结束时的状态，此处写31是因为素材里面的完整动作就是分为31个小png */
+      /* animation-timing-function: steps(31, start);  */
+      /* 延迟多长时间后开始执行动画 */
+      /* animation-delay: 0ms;  */
+      /* 动画执行无限次 */
+      /* animation-iteration-count: infinite; */
+      /* 是否应该轮流反向播放动画 normal/alternate */
+      /* animation-direction: normal; */
+      /* 会在向元素应用动画样式时迅速应用动画的初始帧 */
+      /* animation-fill-mode: backwards; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo"></div>
+</body>
+
+</html>
